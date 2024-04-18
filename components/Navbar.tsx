@@ -10,13 +10,13 @@ function Navbar() {
       </div>
       <div className="flex-none p-3">
         <form action="/auth/signout" method="post">
-          <button>
-            <FiLogOut size={25} />
+          <button type="submit">
+            <FiLogOut size={20} />
           </button>
         </form>
       </div>
       <div className="flex-none p-3">
-        <ThemeController />
+        <ThemeController width="5" height="5" />
       </div>
     </div>
   );

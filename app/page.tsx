@@ -10,7 +10,7 @@ export default function Home() {
             Arukaifu
           </h1>
           <div className="">
-            <ThemeController />
+            <ThemeController width="8" height="8" />
           </div>
         </div>
 
