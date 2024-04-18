@@ -14,12 +14,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-3 md:mt-4 leading-6 text-base">
+        <section className="mt-3 md:mt-4 leading-6 text-base">
           <p>
             <b>Arukaifu</b> was built for me to archive something important that
             i frequently forget.
           </p>
-        </div>
+        </section>
 
         <div className="flex w-full mt-4 justify-start items-start">
           <a href="/login">
