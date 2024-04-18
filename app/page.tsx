@@ -1,5 +1,5 @@
 "use client";
-import ThemeController from "../components/ThemeController";
+import ThemeController from "@/components/ThemeController";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
             Arukaifu
           </h1>
           <div className="">
-            <ThemeController width="8" height="8" />
+            <ThemeController w="2" h="2" />
           </div>
         </div>
 

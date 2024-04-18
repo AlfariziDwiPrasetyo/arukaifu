@@ -16,7 +16,7 @@ function Navbar() {
         </form>
       </div>
       <div className="flex-none p-3">
-        <ThemeController width="5" height="5" />
+        <ThemeController w="1.25" h="1.25" />
       </div>
     </div>
   );

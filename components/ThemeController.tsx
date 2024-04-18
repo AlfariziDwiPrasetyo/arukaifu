@@ -1,13 +1,14 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import React from "react";
 
 type ThemeControllerProps = {
-  width: string;
-  height: string;
+  w: string;
+  h: string;
 };
 
-const ThemeController: React.FC<ThemeControllerProps> = ({ width, height }) => {
+function ThemeController({ w, h }: ThemeControllerProps) {
   const [theme, setTheme] = useState<string>(
     typeof window !== "undefined"
       ? localStorage.getItem("theme") || "light"
@@ -28,6 +29,8 @@ const ThemeController: React.FC<ThemeControllerProps> = ({ width, height }) => {
     localStorage.setItem("theme", event.target.checked ? "sunset" : "light");
   };
 
+  console.log(`Generated class names: w-${w} h-${h}`);
+
   return (
     <div className="border-solid">
       <label className="swap swap-rotate border-solid">
@@ -37,9 +40,11 @@ const ThemeController: React.FC<ThemeControllerProps> = ({ width, height }) => {
           value={theme}
           onChange={handleThemeChange}
           checked={theme === "sunset"}
+          title="theme controller"
         />
         <svg
-          className={`swap-off fill-current w-${width} h-${height}`}
+          style={{ width: `${w}rem`, height: `${h}rem` }}
+          className={`swap-off fill-current `}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -47,7 +52,7 @@ const ThemeController: React.FC<ThemeControllerProps> = ({ width, height }) => {
         </svg>
 
         <svg
-          className={`swap-on fill-current w-${width} h-${height}`}
+          className={`swap-on fill-current w-${w} h-${h}`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -56,6 +61,6 @@ const ThemeController: React.FC<ThemeControllerProps> = ({ width, height }) => {
       </label>
     </div>
   );
-};
+}
 
 export default ThemeController;
