@@ -7,6 +7,8 @@ export async function addNote(formData: FormData) {
   const title = formData.get("title");
   const note = formData.get("note");
 
+  console.log(title, note);
+
   const cookiesStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookiesStore });
   const {
@@ -30,6 +32,6 @@ export async function addNote(formData: FormData) {
     console.error("Error cant insert the data", error);
   }
 
-  revalidatePath("/archive-list");
+  revalidatePath("/archive");
   return { message: "Success" };
 }

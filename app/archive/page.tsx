@@ -1,8 +1,9 @@
-import AddForm from "@/components/AddForm";
 import Card from "@/components/Card";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import { FaRegSquarePlus } from "react-icons/fa6";
 import React from "react";
+import Link from "next/link";
 
 async function page() {
   const cookiesStore = cookies();
@@ -32,7 +33,11 @@ async function page() {
           <h1 className="text-3xl md:3xl">Notes</h1>
         </div>
         <div>
-          <AddForm />
+          <button>
+            <Link href={"/archive/new/notes"}>
+              <FaRegSquarePlus />
+            </Link>
+          </button>
         </div>
       </section>
 
