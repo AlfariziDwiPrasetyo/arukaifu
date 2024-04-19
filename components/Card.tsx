@@ -1,3 +1,4 @@
+import { deleteNote } from "@/app/server-actions/deleteNote";
 import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -18,7 +19,7 @@ function Card({ title, note, id }: CardProps) {
           <button>
             <FaEdit />
           </button>
-          <form action="deleteNotes">
+          <form action={deleteNote}>
             <input type="hidden" name="id" value={id} />
             <button type="submit">
               <MdDelete />
