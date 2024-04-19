@@ -29,8 +29,6 @@ function ThemeController({ w, h }: ThemeControllerProps) {
     localStorage.setItem("theme", event.target.checked ? "sunset" : "light");
   };
 
-  console.log(`Generated class names: w-${w} h-${h}`);
-
   return (
     <div className="border-solid">
       <label className="swap swap-rotate border-solid">
