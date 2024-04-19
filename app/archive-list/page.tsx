@@ -11,8 +11,8 @@ async function page() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: archive, error } = await supabase
-    .from("archives")
+  const { data: notes, error } = await supabase
+    .from("notes")
     .select("*")
     .eq("user_id", user?.id);
 
@@ -24,8 +24,6 @@ async function page() {
   if (error) {
     console.log(error.message);
   }
-
-  console.log(archive);
 
   return (
     <main className="max-w-full w-full flex flex-col justify-center items-center">
@@ -39,9 +37,14 @@ async function page() {
       </section>
 
       <article className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
-        <Card />
-        <Card />
-        <Card />
+        {notes?.map((note) => (
+          <Card
+            key={note.id}
+            title={note.title}
+            note={note.note}
+            id={note.id}
+          />
+        ))}
       </article>
     </main>
   );

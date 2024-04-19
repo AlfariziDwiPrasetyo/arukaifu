@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { addNote } from "@/app/server-actions/addNote";
 import { FaRegSquarePlus } from "react-icons/fa6";
 
 function AddForm() {
@@ -18,9 +19,10 @@ function AddForm() {
       <dialog id="add_modal" className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Add Note</h3>
-          <form action="add_form" method="post">
+          <form action={addNote}>
+            {/* Input modal */}
             <div>
-              <label className="form-control w-full max-w-xl">
+              <label htmlFor="title" className="form-control w-full max-w-xl">
                 <div className="label">
                   <span className="label-text">Title</span>
                 </div>
@@ -34,24 +36,33 @@ function AddForm() {
               </label>
             </div>
             <div>
-              <label className="form-control w-full max-w-xl">
+              <label htmlFor="note" className="form-control w-full max-w-xl">
                 <div className="label">
                   <span className="label-text">Note</span>
                 </div>
                 <textarea
                   className="textarea textarea-bordered"
                   placeholder="Type here"
-                  name="desc"
-                  id="desc"
+                  name="note"
+                  id="note"
                 ></textarea>
               </label>
             </div>
+
+            {/* save modal button */}
+            <div className="flex justify-end">
+              <button type="submit" className="btn right my-5">
+                Save
+              </button>
+            </div>
           </form>
-          <div className="modal-action">
-            <form method="dialog">
-              <button className="btn">Close</button>
-            </form>
-          </div>
+
+          {/* Close the modal button */}
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
         </div>
       </dialog>
     </section>
