@@ -6,7 +6,8 @@ export default function Home() {
       <article className="max-w-xl min-h-screen flex-col w-full flex justify-center items-center p-6 md:p-4">
         <section className="flex w-full items-center justify-between">
           <h1 className="text-center font-bold text-3xl md:text-5xl tracking-tight">
-            Arukaifu
+            <b className="underline decoration-indigo-500">Aru</b>
+            <b>kaifu</b>
           </h1>
           <div className="">
             <ThemeController w="2" h="2" />

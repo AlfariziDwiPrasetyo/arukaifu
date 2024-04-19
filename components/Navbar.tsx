@@ -6,7 +6,10 @@ function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost text-2xl tracking-tight">Arukaifu</a>
+        <h1 className="text-2xl tracking-tight pl-5">
+          <b className="underline decoration-indigo-500">Aru</b>
+          <b>kaifu</b>
+        </h1>
       </div>
       <div className="flex-none p-3">
         <form action="/auth/signout" method="post">
