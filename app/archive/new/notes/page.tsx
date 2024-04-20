@@ -2,7 +2,7 @@
 import ReactQuill from "react-quill";
 import React, { useState, useEffect, ComponentType } from "react";
 import { FaSave } from "react-icons/fa";
-import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.bubble.css";
 import { addNote } from "@/app/server-actions/addNote";
 
 function Page() {
@@ -46,7 +46,7 @@ function Page() {
 
           <div className="w-full text-base-content mt-5">
             <ReactQuill
-              theme="snow"
+              theme="bubble"
               value={value}
               onChange={setValue}
               placeholder="Type here ..."

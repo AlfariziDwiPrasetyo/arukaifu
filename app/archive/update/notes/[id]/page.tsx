@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, ComponentType } from "react";
 import { FaSave } from "react-icons/fa";
-import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.bubble.css";
 import fetchDataById from "@/app/server-actions/fetchNoteById";
 import { updateNote } from "@/app/server-actions/updateNote";
 
@@ -78,7 +78,7 @@ function Page({ params }: { params: { id: string } }) {
 
           <div className="w-full text-base-content mt-5">
             <ReactQuill
-              theme="snow"
+              theme="bubble"
               value={content.note}
               placeholder="Type here ..."
               onChange={handleNoteChange}
