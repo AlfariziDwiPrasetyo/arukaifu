@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEdit } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Link from "next/link";
 import { deleteNote } from "@/app/server-actions/deleteNote";
@@ -20,7 +20,7 @@ function Card({ title, note, id }: CardProps) {
         <div className="flex card-actions justify-end">
           <button>
             <Link href={`/archive/update/notes/${id}`}>
-              <FaEdit />
+              <FaBookOpen />
             </Link>
           </button>
           <form action={deleteNote}>
