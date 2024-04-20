@@ -8,7 +8,7 @@ function Navbar() {
     <div className="navbar bg-base-100">
       <div className="flex-1">
         <h1 className="text-2xl tracking-tight pl-5">
-          <Link href={"/archive"}>
+          <Link aria-label="Go to homepage" href={"/archive"}>
             <b className="underline decoration-indigo-500">Aru</b>
             <b>kaifu</b>
           </Link>
@@ -16,7 +16,7 @@ function Navbar() {
       </div>
       <div className="flex-none p-3">
         <form action="/auth/signout" method="post">
-          <button type="submit">
+          <button aria-label="logout" type="submit">
             <FiLogOut size={20} />
           </button>
         </form>

@@ -23,7 +23,7 @@ async function page() {
   }
 
   if (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 
   return (
@@ -33,8 +33,8 @@ async function page() {
           <h1 className="text-3xl md:3xl">Notes</h1>
         </div>
         <div>
-          <button>
-            <Link href={"/archive/new/notes"}>
+          <button aria-label="add note">
+            <Link aria-label="Go to page new/notes" href={"/archive/new/notes"}>
               <FaRegSquarePlus />
             </Link>
           </button>
