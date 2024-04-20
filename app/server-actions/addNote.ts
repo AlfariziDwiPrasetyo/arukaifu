@@ -2,6 +2,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function addNote(formData: FormData) {
   const title = formData.get("title");
@@ -33,5 +34,10 @@ export async function addNote(formData: FormData) {
   }
 
   revalidatePath("/archive");
-  return { message: "Success" };
+  redirect("/archive");
+
+  return {
+    status: 302,
+    body: { message: "Success" },
+  };
 }
