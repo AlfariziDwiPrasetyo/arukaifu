@@ -1,7 +1,8 @@
-import { deleteNote } from "@/app/server-actions/deleteNote";
 import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import Link from "next/link";
+import { deleteNote } from "@/app/server-actions/deleteNote";
 import RenderQuillContent from "./RenderQuillContent";
 
 type CardProps = {
@@ -18,7 +19,9 @@ function Card({ title, note, id }: CardProps) {
         <RenderQuillContent content={note} />
         <div className="flex card-actions justify-end">
           <button>
-            <FaEdit />
+            <Link href={`/archive/update/notes/${id}`}>
+              <FaEdit />
+            </Link>
           </button>
           <form action={deleteNote}>
             <input type="hidden" name="id" value={id} />
