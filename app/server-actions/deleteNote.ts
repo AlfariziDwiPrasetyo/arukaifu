@@ -27,6 +27,5 @@ export async function deleteNote(formData: FormData) {
   }
 
   revalidatePath("/archive");
-
   return { message: "Success" };
 }
