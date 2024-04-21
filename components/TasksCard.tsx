@@ -1,6 +1,7 @@
 import deleteTask from "@/app/server-actions/deleteTask";
 import React from "react";
 import { MdDelete, MdEdit } from "react-icons/md";
+import Link from "next/link";
 
 type TaskCardProps = {
   title: string;
@@ -60,9 +61,11 @@ function TasksCard({ title, description, status, id }: TaskCardProps) {
             <MdDelete size={18} />
           </button>
         </form>
-        <button className="btn">
-          <MdEdit size={18} />
-        </button>
+        <Link href={`/archive/update/task/${id}`}>
+          <button className="btn">
+            <MdEdit size={18} />
+          </button>
+        </Link>
       </div>
     </div>
   );
