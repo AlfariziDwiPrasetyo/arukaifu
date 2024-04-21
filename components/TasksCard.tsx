@@ -44,7 +44,10 @@ function TasksCard({ title, description, status, id }: TaskCardProps) {
       <div className="flex flex-col space-y-2 px-4">
         <div className="w-full flex justify-between">
           <h1 className="text-2xl tracking-tighter">{title}</h1>
-          <p className={`p-2 rounded-md text-xs`} style={changeStyle(status)}>
+          <p
+            className={` badge rounded-md text-xs`}
+            style={changeStyle(status)}
+          >
             {status}
           </p>
         </div>
