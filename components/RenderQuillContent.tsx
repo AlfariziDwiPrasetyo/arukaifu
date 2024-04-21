@@ -14,7 +14,7 @@ function RenderQuillContent({ content }: renderQuillContentProps) {
 
   return (
     <div
-      className="leading-5 h-20 line-clamp-3 tracking-thight"
+      className="leading-5 line-clamp-3 tracking-thight"
       dangerouslySetInnerHTML={{ __html: htmlContent }}
     />
   );

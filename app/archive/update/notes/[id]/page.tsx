@@ -4,6 +4,7 @@ import { FaSave } from "react-icons/fa";
 import "react-quill/dist/quill.bubble.css";
 import fetchDataById from "@/app/server-actions/fetchNoteById";
 import { updateNote } from "@/app/server-actions/updateNote";
+import DefaultLayout from "@/components/layouts/DefaultLayout";
 
 function Page({ params }: { params: { id: string } }) {
   const [isClient, setIsClient] = useState<boolean>(false);
@@ -55,7 +56,7 @@ function Page({ params }: { params: { id: string } }) {
   };
 
   return (
-    <>
+    <DefaultLayout>
       <section className="max-w-full p-6">
         <form action={updateNote}>
           <div className="flex justify-end">
@@ -94,7 +95,7 @@ function Page({ params }: { params: { id: string } }) {
           <input type="hidden" name="id" value={id} />
         </form>
       </section>
-    </>
+    </DefaultLayout>
   );
 }
 

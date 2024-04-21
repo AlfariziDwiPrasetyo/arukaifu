@@ -4,6 +4,7 @@ import React, { useState, useEffect, ComponentType } from "react";
 import { FaSave } from "react-icons/fa";
 import "react-quill/dist/quill.bubble.css";
 import { addNote } from "@/app/server-actions/addNote";
+import DefaultLayout from "@/components/layouts/DefaultLayout";
 
 function Page() {
   const [isClient, setIsClient] = useState(false);
@@ -25,7 +26,7 @@ function Page() {
   }
 
   return (
-    <>
+    <DefaultLayout>
       <section className="max-w-full p-6">
         <form action={addNote}>
           <div className="flex justify-end">
@@ -56,7 +57,7 @@ function Page() {
           <input type="hidden" name="note" id="note" value={value} />
         </form>
       </section>
-    </>
+    </DefaultLayout>
   );
 }
 
