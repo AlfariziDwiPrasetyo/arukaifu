@@ -4,11 +4,9 @@ import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export async function addPicture(formData: FormData) {
+export async function addNote(formData: FormData) {
   const title = formData.get("title");
-  const note = formData.get("note");
-
-  console.log(title, note);
+  const image = formData.get("image");
 
   const cookiesStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookiesStore });
@@ -21,10 +19,10 @@ export async function addPicture(formData: FormData) {
     return;
   }
 
-  const { error } = await supabase.from("notes").insert([
+  const { error } = await supabase.from("picture").insert([
     {
       title,
-      note,
+      image,
       user_id: user.id,
     },
   ]);
@@ -33,8 +31,8 @@ export async function addPicture(formData: FormData) {
     console.error("Error cant insert the data", error);
   }
 
-  revalidatePath("/archive");
-  redirect("/archive");
+  revalidatePath("/archive/picture");
+  redirect("/archive/picture");
 
   return {
     status: 302,
