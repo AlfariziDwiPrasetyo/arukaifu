@@ -13,7 +13,7 @@ type CardProps = {
 
 function Card({ title, note, id }: CardProps) {
   return (
-    <div className="card w-48 md:w-96 text-neutral-content bg-neutral">
+    <div className="card w-48 md:w-96 text-base-content bg-base-300">
       <div className="card-body text-pretty">
         <h2 className="card-title text-lg md:text-xl line-clamp-1 tracking-tight text-wrap">
           {title}
