@@ -1,3 +1,3 @@
 # Arukaifu
 
-![Project Logo](https://drive.google.com/file/d/1ywquPrhMc3QDVuivUMVT-PxtPs00QiTr/view?usp=drive_link)
+<img src="https://drive.google.com/uc?id=1eRv4eRzYOUebSP7kZUkOTF5RGGR4F68t" style="width:500px"/>
