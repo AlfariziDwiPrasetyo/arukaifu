@@ -14,7 +14,6 @@ function Page({ params }: { params: { id: string } }) {
     note: "",
   });
   const id = params.id;
-  console.log(content);
 
   useEffect(() => {
     const getData = async () => {

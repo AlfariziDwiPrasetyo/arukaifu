@@ -27,8 +27,6 @@ async function page() {
     return;
   }
 
-  console.log(tasks);
-
   return (
     <HomeLayout>
       <article className="w-full flex space-y-5 flex-col justify-between items-center p-2 md:p-2 lg:p-3">
