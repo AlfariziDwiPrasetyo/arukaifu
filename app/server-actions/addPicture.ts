@@ -4,9 +4,10 @@ import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export async function addNote(formData: FormData) {
+export async function addPicture(formData: FormData) {
   const title = formData.get("title");
-  const image = formData.get("image");
+  const imageValue = formData.get("image");
+  const { public_id, secure_url: image } = JSON.parse(imageValue as string);
 
   const cookiesStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookiesStore });
@@ -23,6 +24,7 @@ export async function addNote(formData: FormData) {
     {
       title,
       image,
+      image_id: public_id,
       user_id: user.id,
     },
   ]);

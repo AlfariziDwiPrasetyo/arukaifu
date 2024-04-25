@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export async function addPicture(formData: FormData) {
+export async function addNote(formData: FormData) {
   const title = formData.get("title");
   const note = formData.get("note");
 
