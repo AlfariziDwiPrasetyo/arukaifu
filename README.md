@@ -12,3 +12,10 @@ Arukaifu is a dedicated platform designed to help me remember and archive import
 <img src="https://drive.google.com/uc?id=1UdDtc8A_1w5ack0eE3jNRMNuLVIUxk34" style="width:500px"/>
 <img src="https://drive.google.com/uc?id=1ptqq_SiULGHVrFWbtQx603xy25vAYan9" style="width:500px"/>
 <img src="https://drive.google.com/uc?id=1o72w9WtMvdEdGsx1m9PMZtn43jUqYw32" style="width:500px"/>
+
+## Built With
+- NextJs 14
+- Supabase
+- Daisy Ui
+- Cloudinary
+
